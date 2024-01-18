@@ -41,14 +41,14 @@ function setupip {
 function setupssh {
     if which ssh >/dev/null
     then
+        echo installed
+    else
+        # Open SSH is connected. You can use command X with user WHOAMI 
         sudo apt update -y
         sudo apt install -y openssh-server
         sudo systemctl start ssh
         sudo systemctl enable ssh
         check_service_status ssh
-    else
-        # Open SSH is connected. You can use command X with user WHOAMI 
-        echo installed
     fi
 }
 
