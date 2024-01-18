@@ -1,8 +1,11 @@
-# Linux
+# Debian Proxmox
 
 ## Pre-requirement script:
 
-This script will set up the laptop that i have dedicated for all the virtualboxes that run my infrastructure.
+**Establishing a Comprehensive Infrastructure with Debian and Proxmox**
 
-1. Setup the correct IP configuration
-    1. Find the wireless network card.
+This script meticulously guides you through the process of transforming your dedicated laptop into a powerful virtual machine (VM) and container-hosting powerhouse. By leveraging the robust capabilities of Debian and Proxmox, you'll seamlessly manage your infrastructure while maintaining the flexibility of dual-booting.
+
+**Leveraging Debian's Stability and Proxmox's Versatility**
+
+Debian, a renowned Linux distribution known for its stability and reliability, serves as the foundation for our infrastructure setup. Proxmox, a powerful virtualization platform, provides the ideal environment for managing and orchestrating VMs and containers.
