@@ -7,6 +7,19 @@ ethcon=$(nmcli -t -f NAME c show --active | grep -i "wired")
 hostip=$(hostname -I)
 
 
+function print_color(){
+  NC='\033[0m' # No Color
+
+  case $1 in
+    "green") COLOR='\033[0;32m' ;;
+    "red") COLOR='\033[0;31m' ;;
+    "*") COLOR='\033[0m' ;;
+  esac
+
+  echo -e "${COLOR} $2 ${NC}"
+}
+
+
 function check_service_status(){
   service_is_active=$(sudo systemctl is-active $1)
 
@@ -51,6 +64,8 @@ function setupssh {
         check_service_status ssh
     fi
 }
+
+print_color "green" "################################"
 
 setupip
 setupssh
