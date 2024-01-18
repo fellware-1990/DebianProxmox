@@ -73,6 +73,9 @@ print_color "green" "The installation is going to start now"
 
 setupip
 setupssh
+#WAIT FOR USER TO GENERATE SSH ON MACHINE AND COPY IT
+#CONTINUE
+
 
 # eth_con=$(nmcli -t -f NAME c show --active | grep -i "wired")
 

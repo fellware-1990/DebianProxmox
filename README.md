@@ -44,7 +44,7 @@ Install GIT to be able to download the scripts easily.
 
 ```console
 sudo apt upgrade
-sudo apt install -y gitudo
+sudo apt install -y git
 ```
 
 ** Clone repo **
@@ -54,6 +54,7 @@ sudo apt install -y gitudo
 ** Generate SSH + Add it **
 
 You can generate SSH key with :
+You can enter a passphrase if you want it more secure.
 
 ```ps
 ssh-keygen
