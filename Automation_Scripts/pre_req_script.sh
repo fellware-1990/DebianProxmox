@@ -25,9 +25,9 @@ function check_service_status(){
 
   if [ $service_is_active = "active" ]
   then
-    echo "$1 is active and running"
+    echo "$1 is active and running" >/dev/null
   else
-    echo "$1 is not active/running"
+    print_color "red" "$1 is not active/running"
     exit 1
   fi
 }
@@ -63,6 +63,7 @@ function setupssh {
         sudo systemctl start ssh >/dev/null
         sudo systemctl enable ssh >/dev/null
         check_service_status ssh
+        echo "SSH is setup. You can connect with "$(whoami)"@"$hostip
     fi
 }
 
