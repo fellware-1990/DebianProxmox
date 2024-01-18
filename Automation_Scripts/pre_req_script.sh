@@ -18,8 +18,8 @@ function setupip {
             sudo nmcli connection modify "$ethcon" ipv4.method manual
             sudo nmcli connection modify "$ethcon" ipv4.dns '192.168.1.1'
 
-            sudo nmcli connection down "$ethcon" >/dev/null
-            sudo nmcli connection up "$ethcon" >/dev/null
+            sudo nmcli connection down "$ethcon" #>/dev/null
+            sudo nmcli connection up "$ethcon" #>/dev/null
 
             echo "Host IP Address is set to : "$hostip""
     fi
