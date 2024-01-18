@@ -7,7 +7,7 @@ ethcon=$(nmcli -t -f NAME c show --active | grep -i "wired")
 hostip=$(hostname -I)
 
 function setupip {
-    if [ "$hostip" = 192.168.1.150 ]
+    if [ $hostip = 192.168.1.150 ]
     then
         echo "Host Ip Address is already "$hostip""
     else
