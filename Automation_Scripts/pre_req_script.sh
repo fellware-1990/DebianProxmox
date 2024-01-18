@@ -37,10 +37,8 @@ function setupip {
     if [ $hostip = 192.168.1.150 ]
     then
         # echo "Host Ip Address is already : "$hostip""
-        print_color "green" "#                                        #"
-        print_color "green" "# Host IP Address is DONE                #"
-        print_color "green" "#                                        #"
-        print_color "green" "##########################################"
+        print_color "green" "Host IP Address is DONE"
+
     else
         sudo nmcli connection modify "$ethcon" ipv4.address 192.168.1.150/24
         sudo nmcli connection modify "$ethcon" ipv4.gateway 192.168.1.1
@@ -49,10 +47,7 @@ function setupip {
         sudo nmcli connection down "$ethcon" >/dev/null
         sudo nmcli connection up "$ethcon" >/dev/null
         #echo "Host IP Address is set to : "$hostip""
-        print_color "green" "#                                        #"
-        print_color "green" "# Host IP Address is DONE                #"
-        print_color "green" "#                                        #"
-        print_color "green" "##########################################"
+        print_color "green" "Host IP Address is DONE"
     fi
 }
 
@@ -71,16 +66,9 @@ function setupssh {
     fi
 }
 
-print_color "green" "##########################################"
-sleep 1
-print_color "green" "#                                        #"
-sleep 1
-print_color "green" "# The installation is going to start now #"
-sleep 1
-print_color "green" "#                                        #"
-sleep 1
-print_color "green" "##########################################"
-sleep 1
+
+print_color "green" "The installation is going to start now"
+
 
 setupip
 setupssh
