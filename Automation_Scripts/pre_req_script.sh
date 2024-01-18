@@ -46,7 +46,11 @@ function setupip {
             sudo nmcli connection down "$ethcon" >/dev/null
             sudo nmcli connection up "$ethcon" >/dev/null
 
-            echo "Host IP Address is set to : "$hostip""
+            #echo "Host IP Address is set to : "$hostip""
+            print_color "green" "#                                        #"
+            print_color "green" "# Host IP Address is DONE                #"
+            print_color "green" "#                                        #"
+            print_color "green" "##########################################"
     fi
 }
 
