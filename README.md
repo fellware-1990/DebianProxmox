@@ -37,3 +37,30 @@ sudo nano /etc/sudoers
 ```
 After opening this file add the user to *\# User alias specification* like this:<br/>username ALL=(ALL:ALL) ALL<br/>
 Replace username with your username again.
+
+** Install GIT **
+
+Install GIT to be able to download the scripts easily.
+
+```console
+sudo apt upgrade
+sudo apt install -y gitudo
+```
+
+** Clone repo **
+
+** Run script **
+
+** Generate SSH + Add it **
+
+You can generate SSH key with :
+
+```ps
+ssh-keygen
+```
+
+And after that you can copy it with :
+
+```ps
+type $env:USERPROFILE\.ssh\id_rsa.pub | ssh {USERNAME}@{IP-ADDRESS-OR-FQDN} "cat >> .ssh/authorized_keys"
+```
