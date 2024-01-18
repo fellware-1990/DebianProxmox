@@ -35,5 +35,6 @@ Replace username with your username.
 ```console
 sudo nano /etc/sudoers
 ```
-After opening this file add the user to *\# User alias specification* like this:\ username ALL=(ALL:ALL) ALL\
+After opening this file add the user to *\# User alias specification* like this: \ 
+username ALL=(ALL:ALL) ALL\
 Replace username with your username again.
