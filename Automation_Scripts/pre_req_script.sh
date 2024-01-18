@@ -3,10 +3,22 @@
 # This script will do the following things:
 # Complete the installation of the laptop that will start every VM
 
-exec 2> error 1> mylog
-
 ethcon=$(nmcli -t -f NAME c show --active | grep -i "wired")
 hostip=$(hostname -I)
+
+
+function check_service_status(){
+  service_is_active=$(sudo systemctl is-active $1)
+
+  if [ $service_is_active = "active" ]
+  then
+    echo "$1 is active and running"
+  else
+    echo "$1 is not active/running"
+    exit 1
+  fi
+}
+
 
 function setupip {
     if [ $hostip = 192.168.1.150 ]
@@ -18,14 +30,30 @@ function setupip {
             sudo nmcli connection modify "$ethcon" ipv4.method manual
             sudo nmcli connection modify "$ethcon" ipv4.dns '192.168.1.1'
 
-            sudo nmcli connection down "$ethcon" #>/dev/null
-            sudo nmcli connection up "$ethcon" #>/dev/null
+            sudo nmcli connection down "$ethcon" >/dev/null
+            sudo nmcli connection up "$ethcon" >/dev/null
 
             echo "Host IP Address is set to : "$hostip""
     fi
 }
 
+
+function setupssh {
+    if which ssh >/dev/null
+    then
+        sudo apt update -y
+        sudo apt install -y openssh-server
+        sudo systemctl start ssh
+        sudo systemctl enable ssh
+        check_service_status ssh
+    else
+        # Open SSH is connected. You can use command X with user WHOAMI 
+        echo installed
+    fi
+}
+
 setupip
+setupssh
 
 # eth_con=$(nmcli -t -f NAME c show --active | grep -i "wired")
 
