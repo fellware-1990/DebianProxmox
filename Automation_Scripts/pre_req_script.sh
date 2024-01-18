@@ -41,7 +41,7 @@ function setupip {
 function setupssh {
     if which ssh >/dev/null
     then
-        echo "SSH is setup. You can connect with "$(whoami)"@"$(hostip)
+        echo "SSH is setup. You can connect with "$(whoami)"@"$hostip
     else
         # Open SSH is connected. You can use command X with user WHOAMI 
         sudo apt update -y >/dev/null
