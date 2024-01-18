@@ -3,15 +3,15 @@
 # This script will do the following things:
 # Complete the installation of the laptop that will start every VM
 
-eth_con=$(nmcli -t -f NAME c show --active | grep -i "wired")
+ethcon=$(nmcli -t -f NAME c show --active | grep -i "wired")
 
-sudo nmcli connection modify '$eth_con' ipv4.address 192.168.1.150/24
-sudo nmcli connection modify '$eth_con' ipv4.gateway 192.168.1.1
-sudo nmcli connection modify '$eth_con' ipv4.method manual
-sudo nmcli connection modify '$eth_con' ipv4.dns '192.168.1.1'
+sudo nmcli connection modify '$ethcon' ipv4.address 192.168.1.150/24
+sudo nmcli connection modify '$ethcon' ipv4.gateway 192.168.1.1
+sudo nmcli connection modify '$ethcon' ipv4.method manual
+sudo nmcli connection modify '$ethcon' ipv4.dns '192.168.1.1'
 
-sudo nmcli connection down '$eth_con'
-sudo nmcli connection up '$eth_con'
+sudo nmcli connection down '$ethcon'
+sudo nmcli connection up '$ethcon'
 
 # eth_con=$(nmcli -t -f NAME c show --active | grep -i "wired")
 
