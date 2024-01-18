@@ -55,7 +55,7 @@ function setupip {
 function setupssh {
     if which ssh >/dev/null
     then
-        echo "SSH is setup. You can connect with "$(whoami)"@"$hostip
+        print_color "green" "SSH is setup. You can connect with "$(whoami)"@"$hostip
     else
         # Open SSH is connected. You can use command X with user WHOAMI 
         sudo apt update -y >/dev/null
@@ -63,7 +63,7 @@ function setupssh {
         sudo systemctl start ssh >/dev/null
         sudo systemctl enable ssh >/dev/null
         check_service_status ssh
-        echo "SSH is setup. You can connect with "$(whoami)"@"$hostip
+        print_color "green" "SSH is setup. You can connect with "$(whoami)"@"$hostip
     fi
 }
 
