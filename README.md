@@ -18,22 +18,22 @@ To make it a little easyier in the future to manage the machine i'm going to mak
 
 1. Start by logging to the root user:
 
-```shell
+```console
 su root
 ```
 Confirm with your password.
 
 2. Run the command to add the user to the sudoer group:
 
-```shell
+```console
 sudo usermod -aG sudo username
 ```
 Replace username with your username.
 
 3. Add the user to the sudoer file.
 
-```shell
+```console
 sudo nano /etc/sudoers
 ```
-After opening this file add the user to *\# User alias specification* like this: username ALL=(ALL:ALL) ALL
+After opening this file add the user to *\# User alias specification* like this:\ username ALL=(ALL:ALL) ALL\
 Replace username with your username again.
