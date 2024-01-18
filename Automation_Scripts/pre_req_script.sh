@@ -3,6 +3,8 @@
 # This script will do the following things:
 # Complete the installation of the laptop that will start every VM
 
+exec 2> error
+
 ethcon=$(nmcli -t -f NAME c show --active | grep -i "wired")
 hostip=$(hostname -I)
 
