@@ -72,10 +72,15 @@ function setupssh {
 }
 
 print_color "green" "##########################################"
+sleep 1
 print_color "green" "#                                        #"
+sleep 1
 print_color "green" "# The installation is going to start now #"
+sleep 1
 print_color "green" "#                                        #"
+sleep 1
 print_color "green" "##########################################"
+sleep 1
 
 setupip
 setupssh
