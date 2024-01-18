@@ -65,7 +65,11 @@ function setupssh {
     fi
 }
 
-print_color "green" "################################"
+print_color "green" "##########################################"
+print_color "green" "#                                        #"
+print_color "green" "# The installation is going to start now #"
+print_color "green" "#                                        #"
+print_color "green" "##########################################"
 
 setupip
 setupssh
