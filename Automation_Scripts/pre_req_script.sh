@@ -36,21 +36,23 @@ function check_service_status(){
 function setupip {
     if [ $hostip = 192.168.1.150 ]
     then
-        echo "Host Ip Address is already : "$hostip""
+        # echo "Host Ip Address is already : "$hostip""
+        print_color "green" "#                                        #"
+        print_color "green" "# Host IP Address is DONE                #"
+        print_color "green" "#                                        #"
+        print_color "green" "##########################################"
     else
-            sudo nmcli connection modify "$ethcon" ipv4.address 192.168.1.150/24
-            sudo nmcli connection modify "$ethcon" ipv4.gateway 192.168.1.1
-            sudo nmcli connection modify "$ethcon" ipv4.method manual
-            sudo nmcli connection modify "$ethcon" ipv4.dns '192.168.1.1'
-
-            sudo nmcli connection down "$ethcon" >/dev/null
-            sudo nmcli connection up "$ethcon" >/dev/null
-
-            #echo "Host IP Address is set to : "$hostip""
-            print_color "green" "#                                        #"
-            print_color "green" "# Host IP Address is DONE                #"
-            print_color "green" "#                                        #"
-            print_color "green" "##########################################"
+        sudo nmcli connection modify "$ethcon" ipv4.address 192.168.1.150/24
+        sudo nmcli connection modify "$ethcon" ipv4.gateway 192.168.1.1
+        sudo nmcli connection modify "$ethcon" ipv4.method manual
+        sudo nmcli connection modify "$ethcon" ipv4.dns '192.168.1.1'
+        sudo nmcli connection down "$ethcon" >/dev/null
+        sudo nmcli connection up "$ethcon" >/dev/null
+        #echo "Host IP Address is set to : "$hostip""
+        print_color "green" "#                                        #"
+        print_color "green" "# Host IP Address is DONE                #"
+        print_color "green" "#                                        #"
+        print_color "green" "##########################################"
     fi
 }
 
